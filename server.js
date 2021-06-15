@@ -4,17 +4,17 @@ const express = require('express');
 
 const app = express();
 
-app.get('/ping', (req, res) => {
-  res.status(200).send('pong');
+app.get('/', (req, res) => {
+  res.status(200).send({"message": "thanks"});
 })
 
 app.get('/data', (req, res) => {
-  const person = {
+  const Person = {
     fName: 'Robert',
     lName: 'Frost',
   }
 
-  res.status(200).send(person);
+  res.status(200).send(Person);
 })
 
 module.exports = app;
