@@ -6,11 +6,11 @@ const supertest = require('supertest');
 const request = supertest(server);
 
 describe('Express server', () => {
-  test('Should return `ping` on GET to /pong', async () => {
-    const response = await request.get('/ping');
+  test('Should return `message: thanks` on GET to /', async () => {
+    const response = await request.get('/');
 
     expect(response.status).toEqual(200);
-    expect(response.text).toEqual('pong');
+    expect(response.body).toEqual({"message": "thanks"});
   })
 
   test('Should return `fName` and `lName` on GET to /data', async () => {
